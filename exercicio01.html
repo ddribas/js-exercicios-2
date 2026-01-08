@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    <script>
+        //Cria uma função anónima que seja logo executada, e que faça console.log da string isto foi demasiado rápido!;
+        (() => console.log('isto foi demasiado rápido!'))();
+
+        //Cria uma closure que construa campos de um formulário. Na primeira função devemos passar o nome do campo, e na segunda função devemos passar o resultado. Deverá gerar algo como: Nome: Vitor
+        const formMaker = (element) => (value) => ({[element] : value});
+    </script>
+</body>
+</html>

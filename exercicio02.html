@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    <script>
+        const companies = [
+            { name: "Company One", category: "Finance", start: 1981, end: 2004 },
+            { name: "Company Two", category: "Retail", start: 1992, end: 2008 },
+            { name: "Company Three", category: "Auto", start: 1999, end: 2007 },
+            { name: "Company Four", category: "Retail", start: 1989, end: 2010 },
+            { name: "Company Five", category: "Technology", start: 2009, end: 2014 },
+            { name: "Company Six", category: "Finance", start: 1987, end: 2010 },
+            { name: "Company Seven", category: "Auto", start: 1986, end: 1996 },
+            { name: "Company Eight", category: "Technology", start: 2011, end: 2016 },
+            { name: "Company Nine", category: "Retail", start: 1981, end: 1989 }
+        ];
+        const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
+        const person = {
+            name: "Costas",
+            address: {
+                street: "Lalaland 12"
+            }
+        };
+
+        //Cria uma função que faça console.log de cada nome de empresa
+        const companyAnnouncer = () => companies.forEach((el) => console.log(`O nome desta empresa é ${el.name} e foi fundada em ${el.start}`));
+
+        //Cria uma função que devolva as empresas iniciadas após 1987;
+        const companyFilter = (year) => () => companies.filter((el) => el.start > year);
+        const companyFilter1987 = companyFilter(1987);
+
+        //Cria uma função que devolva a soma dos valores do array ages usando reduce;
+        const ageSum = () => ages.reduce((acc, val) => acc + val, 0);
+
+        //Faz console.log de um novo objeto que tenha as chaves de name e category iguais a companies[0], usando o destructuring de objects.
+        const {name, category} = companies[0];
+        const company_1 = {name, category};
+        console.log(company_1);
+        
+        //ou
+        const company_2 = (({name, category}) => ({name, category}))(companies[0]);
+        console.log(company_2);
+
+        //Faz destructuring da chave street e cria uma variável chamada street do objet person.
+        const {address: {street}} = person;
+
+        //Cria uma função que avalia as empresas que tenham uma data de início superior a 1996 e inferior a 2004, inclusivé.
+        const companyEvaluation = () => companies.filter((el) => el.start > 1996 && el.start < 2004);
+
+    </script>
+</body>
+</html>
