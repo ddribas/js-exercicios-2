@@ -12,6 +12,9 @@
 
         //Cria uma closure que construa campos de um formulário. Na primeira função devemos passar o nome do campo, e na segunda função devemos passar o resultado. Deverá gerar algo como: Nome: Vitor
         const formMaker = (element) => (value) => ({[element] : value});
+
+        //só dei conta depois de olhar para o github do resto do pessoal que era para fazer em string em vez de retornar um objeto 😭
+        const formMaker2 = (element) => (value) => `${element}: ${value}`;
     </script>
 </body>
 </html>
